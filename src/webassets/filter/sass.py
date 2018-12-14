@@ -165,8 +165,6 @@ class Sass(ExternalTool):
         args = [self.binary or 'sass',
                 '--stdin',
                 '--style', self.style or 'expanded']
-        if self.line_comments is None or self.line_comments:
-            args.append('--line-comments')
         if isinstance(self.ctx.cache, FilesystemCache):
             args.extend(['--cache-location',
                          os.path.join(orig_cwd, self.ctx.cache.directory, 'sass')])
